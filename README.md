@@ -4,7 +4,7 @@ A collection of tweaks to the Mint-Y themes
 ## Requirements
 
 ```bash
-sudo apt install git sassc inkscape
+sudo apt install git sassc inkscape optipng
 ```
 
 ## Usage
