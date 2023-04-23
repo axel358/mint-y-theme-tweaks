@@ -93,7 +93,18 @@ sed -i 's/background-color: darken($base_color, 5%);/background-color: darken($b
 echo 'Generating themes'
 ./generate-themes.py
 
-echo 'Deleting Mint-X'
-rm -r usr/share/themes/Mint-X*
+OUT_DIR=usr/share/themes/
+INSTALL_DIR=~/.local/share/themes
 
-echo 'Done. Themes are under usr/share/themes/'
+echo 'Deleting Mint-X'
+rm -r ${OUT_DIR}Mint-X*
+
+echo "Done. Themes are under $OUT_DIR"
+while true; do
+    read -p "Would you like to install themes to $INSTALL_DIR ? " yn
+    case $yn in
+        [Yy]* ) cp -r ${OUT_DIR}* $INSTALL_DIR; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
