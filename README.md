@@ -14,8 +14,8 @@ Note: You will need an active internet connection for the script to download the
 
 ## Features
 
-### - Darker dark theme variant
+- Darker dark theme variant
 
-### - Remove highlight from HdyViewSwitcher buttons
+- Remove highlight from HdyViewSwitcher buttons
 
-### - Tooltips follow the background color instad of being always yellow
+- Tooltips follow the background color instad of always being yellow
