@@ -1,10 +1,10 @@
-<h1>Mint-Y themes tweaks</h1>
+#Mint-Y themes tweaks
 A collection of tweaks to the Mint-Y themes
 
 ## Requirements:
 
 ```bash
-	sudo apt install git sassc inkscape
+sudo apt install git sassc inkscape
 ```
 
 ## Usage
@@ -14,8 +14,8 @@ Note: You will need an active internet connection for the script to download the
 
 ## Features
 
-# Darker dark theme variant
+### - Darker dark theme variant
 
-# Remove highlight from HdyViewSwitcher buttons
+### - Remove highlight from HdyViewSwitcher buttons
 
-# Tooltips follow the background color instad of being always yellow
+### - Tooltips follow the background color instad of being always yellow
