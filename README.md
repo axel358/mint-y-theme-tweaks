@@ -1,7 +1,7 @@
 # Mint-Y theme tweaks
 A collection of tweaks to the Mint-Y themes
 
-## Requirements:
+## Requirements
 
 ```bash
 sudo apt install git sassc inkscape
