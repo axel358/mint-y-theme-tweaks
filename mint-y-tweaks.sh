@@ -1,5 +1,13 @@
 #!/usr/bin/bash
 
+THEMES_DIR=mint-themes
+
+if [ ! -d "$THEMES_DIR" ]; then
+    git clone https://github.com/linuxmint/mint-themes
+fi
+
+cd $THEMES_DIR
+
 echo 'Darkening assets'
 
 #delete relevant assets only
