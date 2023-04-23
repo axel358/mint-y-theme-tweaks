@@ -1,4 +1,4 @@
-#Mint-Y themes tweaks
+# Mint-Y themes tweaks
 A collection of tweaks to the Mint-Y themes
 
 ## Requirements:
