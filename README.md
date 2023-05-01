@@ -19,3 +19,11 @@ Note: You will need an active internet connection for the script to download the
 - Remove highlight from HdyViewSwitcher buttons
 
 - Tooltips follow the background color instad of always being yellow
+
+### Before
+
+![](screenshots/before.webp)
+
+### After
+
+![](screenshots/after.webp)
