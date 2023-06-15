@@ -25,70 +25,50 @@ find . -wholename '*src/Mint-Y/variations/*gtk-3.0/render-assets.sh' -type f -ex
 echo 'Darkening GTK3 and GTK4'
 
 #bg_color
-sed -i 's/#383838/#202020/g' src/Mint-Y/gtk-3.0/sass/_colors.scss
-sed -i 's/#383838/#202020/g' src/Mint-Y/gtk-4.0/sass/_colors.scss
+sed -i '8s/#383838/#202020/g' src/Mint-Y/gtk-3.0/sass/_colors.scss
+sed -i '8s/#383838/#202020/g' src/Mint-Y/gtk-4.0/sass/_colors.scss
 
 #base_color
-sed -i 's/#ffffff, #404040/#ffffff, #252525/g' src/Mint-Y/gtk-3.0/sass/_colors.scss
-sed -i 's/#ffffff, #404040/#ffffff, #252525/g' src/Mint-Y/gtk-4.0/sass/_colors.scss
+sed -i '10s/#404040/#252525/g' src/Mint-Y/gtk-3.0/sass/_colors.scss
+sed -i '10s/#404040/#252525/g' src/Mint-Y/gtk-4.0/sass/_colors.scss
 
-#borders_color, separator_color
-sed -i 's/darken($bg_color, 6%)/darken($bg_color, 5%)/g' src/Mint-Y/gtk-3.0/sass/_colors.scss
-sed -i 's/darken($bg_color, 6%)/darken($bg_color, 5%)/g' src/Mint-Y/gtk-4.0/sass/_colors.scss
-sed -i 's/darken($bg_color,6%)/darken($bg_color, 5%)/g' src/Mint-Y/gtk-3.0/sass/_colors.scss
-sed -i 's/darken($bg_color,6%)/darken($bg_color, 5%)/g' src/Mint-Y/gtk-4.0/sass/_colors.scss
+#borders_color
+sed -i '18s/6%/5%/g' src/Mint-Y/gtk-3.0/sass/_colors.scss
+sed -i '18s/6%/5%/g' src/Mint-Y/gtk-4.0/sass/_colors.scss
+
+#separator_color
+sed -i '19s/6%/5%/g' src/Mint-Y/gtk-3.0/sass/_colors.scss
+sed -i '19s/6%/5%/g' src/Mint-Y/gtk-4.0/sass/_colors.scss
 
 #vbox and hbox separators
-sed -i 's/  background-color: transparentize(black, 0.9);/  background-color: transparentize($borders_color, 0.5);/g' src/Mint-Y/gtk-4.0/sass/_common.scss
-sed -i 's/  background-color: transparentize(black, 0.9);/  background-color: transparentize($borders_color, 0.5);/g' src/Mint-Y/gtk-3.0/sass/_common.scss
+sed -i '2433s/black, 0.9/$borders_color, 0.5/g' src/Mint-Y/gtk-3.0/sass/_common.scss
+sed -i '2644s/black, 0.9/$borders_color, 0.5/g' src/Mint-Y/gtk-4.0/sass/_common.scss
 
 #header_bg
-sed -i 's/darken($bg_color, 5%), darken($bg_color, 5%)/darken($bg_color, 5%), darken($bg_color, 2%)/g' src/Mint-Y/gtk-3.0/sass/_colors.scss
-sed -i 's/darken($bg_color, 5%), darken($bg_color, 5%)/darken($bg_color, 5%), darken($bg_color, 2%)/g' src/Mint-Y/gtk-4.0/sass/_colors.scss
+sed -i '43s/5%), darken($bg_color, 5%)/5%), darken($bg_color, 2%)/g' src/Mint-Y/gtk-3.0/sass/_colors.scss
+sed -i '43s/5%), darken($bg_color, 5%)/5%), darken($bg_color, 2%)/g' src/Mint-Y/gtk-4.0/sass/_colors.scss
 
 #header_highlight
-sed -i 's/#EEEEEE, #373737/#EEEEEE, $header_bg/g' src/Mint-Y/gtk-3.0/sass/_colors.scss
-sed -i 's/#EEEEEE, #373737/#EEEEEE, $header_bg/g' src/Mint-Y/gtk-4.0/sass/_colors.scss
+sed -i '47s/#373737/$header_bg/g' src/Mint-Y/gtk-3.0/sass/_colors.scss
+sed -i '47s/#373737/$header_bg/g' src/Mint-Y/gtk-4.0/sass/_colors.scss
 
 #dark_sidebar_bg
-sed -i 's/5%), #353535/5%), $bg_color/g' src/Mint-Y/gtk-3.0/sass/_colors.scss
-sed -i 's/5%), #353535/5%), $bg_color/g' src/Mint-Y/gtk-4.0/sass/_colors.scss
-
-#tooltip_bg_color
-sed -i 's/#fbeaa0/$bg_color/g' src/Mint-Y/gtk-3.0/sass/_colors.scss
-sed -i 's/#fbeaa0/$bg_color/g' src/Mint-Y/gtk-4.0/sass/_colors.scss
-
-#tooltip_fg_color
-sed -i 's/#4a4a4a/$text_color/g' src/Mint-Y/gtk-3.0/sass/_colors.scss
-sed -i 's/#4a4a4a/$text_color/g' src/Mint-Y/gtk-4.0/sass/_colors.scss
-
-#tooltip_border_color
-sed -i 's/#d0d0d0/$borders_color/g' src/Mint-Y/gtk-3.0/sass/_colors.scss
-sed -i 's/#d0d0d0/$borders_color/g' src/Mint-Y/gtk-4.0/sass/_colors.scss
+sed -i '53s/#353535/$bg_color/g' src/Mint-Y/gtk-3.0/sass/_colors.scss
+sed -i '53s/#353535/$bg_color/g' src/Mint-Y/gtk-4.0/sass/_colors.scss
 
 echo 'Removing highlight from HdyViewSwitcher'
-sed -i 's/border-color: $selected_bg_color;//g' src/Mint-Y/gtk-3.0/sass/_libhandy.scss
+sed -i '81s/border-color: $selected_bg_color;//g' src/Mint-Y/gtk-3.0/sass/_libhandy.scss
 
 echo 'Darkening Cinnamon'
 
 #base_color
-sed -i 's/#404040/#242424/g' src/Mint-Y/cinnamon/sass/_colors.scss
+sed -i '8s/#404040/#242424/g' src/Mint-Y/cinnamon/sass/_colors.scss
 
 #bg_color
-sed -i 's/#2f2f2f/#1F1F1F/g' src/Mint-Y/cinnamon/sass/_colors.scss
-
-
-#tooltip_bg_color
-sed -i 's/#fbeaa0/$bg_color/g' src/Mint-Y/cinnamon/sass/_colors.scss
-
-#tooltip_fg_color
-sed -i 's/#4a4a4a/$text_color/g' src/Mint-Y/cinnamon/sass/_colors.scss
-
-#tooltip_border_color
-sed -i 's/#d0d0d0/$borders_color/g' src/Mint-Y/cinnamon/sass/_colors.scss
+sed -i '10s/#2f2f2f/#1F1F1F/g' src/Mint-Y/cinnamon/sass/_colors.scss
 
 #favorites-box
-sed -i 's/background-color: darken($base_color, 5%);/background-color: darken($base_color, 1%);/g' src/Mint-Y/cinnamon/sass/_common.scss
+sed -i '1420s/5%/1%/g' src/Mint-Y/cinnamon/sass/_common.scss
 
 echo 'Generating themes'
 ./generate-themes.py
