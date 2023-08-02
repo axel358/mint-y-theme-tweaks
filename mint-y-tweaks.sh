@@ -81,7 +81,7 @@ rm -r ${OUT_DIR}Mint-X*
 
 echo "Done. Themes are under $OUT_DIR"
 while true; do
-    read -p "Would you like to install themes to $INSTALL_DIR ? " yn
+    read -p "Would you like to install themes to $INSTALL_DIR ? [Y/N] " yn
     case $yn in
         [Yy]* ) cp -r ${OUT_DIR} $INSTALL_DIR; break;;
         [Nn]* ) exit;;
